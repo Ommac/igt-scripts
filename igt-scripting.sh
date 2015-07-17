@@ -148,6 +148,7 @@ greet_like_god() {
     sleep 1.0 && smile
 
     go_home_helper 2.0
+    breathers "start"
 }
 
 mostra_muscoli() {
@@ -156,11 +157,9 @@ mostra_muscoli() {
     echo "ctpq time 1.5 off 0 pos (-27.0 78.0 -37.0 33.0 -79.0 0.0 -4.0 26.0 27.0 0.0 29.0 59.0 117.0 87.0 176.0 250.0)" | yarp rpc /ctpservice/left_arm/rpc
     echo "ctpq time 1.0 off 0 pos (-27.0 78.0 -37.0 93.0 -79.0 0.0 -4.0 26.0 67.0 0.0 99.0 59.0 117.0 87.0 176.0 250.0)" | yarp rpc /ctpservice/right_arm/rpc
     echo "ctpq time 1.0 off 0 pos (-27.0 78.0 -37.0 93.0 -79.0 0.0 -4.0 26.0 67.0 0.0 99.0 59.0 117.0 87.0 176.0 250.0)" | yarp rpc /ctpservice/left_arm/rpc
-    speak "Dei supereroi"
-    sleep 3.0
-    smile
+    sleep 5.5
     go_home_helper 2.0
-    breathers "start"
+    sleep 2.5    
 }
 
 smile() {
@@ -211,58 +210,66 @@ saluta() {
 #######################################################################################
 
 scene_1() {
-    echo "ctpq time 1.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
+    breathers "stop"
+    echo "ctpq time 2.0 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
     sleep 2.0 && speak "Bentornati!"
-    smile
+    #sleep 3.0 && smile
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0  25.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0  25.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/right_arm/rpc
-    go_home
-    sleep 2.5 && speak "Ciao Nina!"
+    go_home_helper 2.0
+    sleep 5 && speak "Ciao Nina!"
+    echo "ctpq time 2.0 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/left_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0  25.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/left_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/left_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0  25.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/left_arm/rpc
     echo "ctpq time 0.5 off 0 pos (-60.0 44.0 -2.0 96.0 53.0 -17.0 -11.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)" | yarp rpc /ctpservice/left_arm/rpc
-    go_home
-    smile
-    sleep 2.5 && speak "Ciao Frank, bella camicia!"
+    go_home_helper 2.0    
+    sleep 5 && speak "Ciao frenc? bella camicia!"
+    cun    
     greet_with_right_thumb_up
-    go_home
+    go_home_helper 2.0
     smile
-    sleep 2.5 && speak "Hey Bisio! Bella pettinatura!"
-    sleep 2.5 && speak "ha ha ha ha ha ha!"
-    go_home
+    sleep 2.5 && speak "Hey Biszio? Bella pettinatura! Sembra la mia"
     smile
+    sleep 3.2 && speak "ha-ha-ha-ha!"
+    breathers "start"
 }
 
 
 scene_2() {
-    sleep 2.0 && speak "mi chiamo aicab"
-    cun
+    speak "mi chiamo aicab"
+    surprised
+    sleep 4.0 && smile
     go_home
 }
 
 scene_3() {
-    sleep 2.0 && speak "sono di genova!"
-    smile
+    smile    
+    sleep 1.0 && speak "sono di genova!"
 }
 
 scene_4() {
-    sleep 3.0 && speak "Ho dieci anni, anche se dimostro di meno?"
+    smile
+    sleep 1.0 && speak "Ho dieci anni" 
+    sleep 2.5  && speak "anche se dimostro di meno."
     cun
 }
 
 scene_5() {
-    sleep 3.0 && speak "No, sono venuto con mio padre e uolkmen!"
+    speak "No, sono venuto con mio padre? e uolk-men!"
+    sleep 4
     smile
 }
 
 scene_6() {
-    sleep 3.0 && speak "Beh, so fare molte cose! ma qui sono venuto per fare una dimostrazione della mia passione!"
     smile
-    mostra_muscoli
+    speak "Beh, so fare molte cose! ma qui sono venuto per fare una dimostrazione della mia passione!"
+    sleep 2.0
     cun
+    mostra_muscoli
+    smile
 }
 
 #######################################################################################
